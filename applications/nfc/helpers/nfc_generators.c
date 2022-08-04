@@ -185,8 +185,8 @@ static void
     mful->data[8] = data->nfc_data.atqa[0];
     mful->data[9] = data->nfc_data.atqa[1];
 
-    uint16_t config_register_page;
-    uint16_t session_register_page;
+    uint16_t config_register_page = 0;
+    uint16_t session_register_page = 0;
 
     // Sync with mifare_ultralight.c
     switch(type) {

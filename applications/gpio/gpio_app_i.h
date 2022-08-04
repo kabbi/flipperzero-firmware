@@ -2,6 +2,7 @@
 
 #include "gpio_app.h"
 #include "gpio_item.h"
+#include "neopixel.h"
 #include "scenes/gpio_scene.h"
 #include "gpio_custom_event.h"
 #include "usb_uart_bridge.h"
@@ -14,6 +15,7 @@
 #include <gui/modules/variable_item_list.h>
 #include <gui/modules/widget.h>
 #include "views/gpio_test.h"
+#include "views/gpio_neopixel.h"
 #include "views/gpio_usb_uart.h"
 
 struct GpioApp {
@@ -25,6 +27,7 @@ struct GpioApp {
 
     VariableItemList* var_item_list;
     GpioTest* gpio_test;
+    GpioNeopixel* gpio_neopixel;
     GpioUsbUart* gpio_usb_uart;
     UsbUartBridge* usb_uart_bridge;
 };
@@ -32,6 +35,7 @@ struct GpioApp {
 typedef enum {
     GpioAppViewVarItemList,
     GpioAppViewGpioTest,
+    GpioAppViewGpioNeopixel,
     GpioAppViewUsbUart,
     GpioAppViewUsbUartCfg,
     GpioAppViewUsbUartCloseRpc,
